@@ -1,5 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import tasksReducer from "./reducers/tasks";
+import TodoApp from "./containers/TodoApp";
 
+const store = createStore(tasksReducer);
 // 実際は、ここでアプリケーションコンポーネントを読み込ませる
-ReactDOM.render(<h1>ToDo App</h1>, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <TodoApp />
+  </Provider>,
+  document.getElementById("root")
+);

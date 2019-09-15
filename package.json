@@ -26,8 +26,11 @@
   },
   "homepage": "https://github.com/i-toge-nta/react-sample#readme",
   "dependencies": {
+    "@types/react-redux": "^7.1.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
