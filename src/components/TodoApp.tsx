@@ -1,7 +1,16 @@
 import React from "react";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
-import {} from "../types";
+import {
+  Button,
+  AppBar,
+  Toolbar,
+  Typography,
+  Input,
+  List,
+  ListItem,
+  ListItemText
+} from "@material-ui/core";
 
 interface Props {
   task: string;
@@ -12,13 +21,30 @@ interface Props {
 const TodoApp: React.FC<Props> = ({ task, tasks, inputTask, addTask }) => {
   return (
     <div>
-      <input type="text" onChange={e => inputTask(e.target.value)} />
-      <input type="button" value="add" onClick={() => addTask(task)} />
-      <ul>
-        {tasks.map(function(item, i) {
-          return <li key={i}>{item} </li>;
-        })}
-      </ul>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography>Todo</Typography>
+        </Toolbar>
+      </AppBar>
+      <div style={{ padding: 16 }}>
+        <Input onChange={e => inputTask(e.target.value)} />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => addTask(task)}
+        >
+          add
+        </Button>
+        <List>
+          {tasks.map(function(item, i) {
+            return (
+              <ListItem key={i}>
+                <ListItemText primary={`・${item}`} />
+              </ListItem>
+            );
+          })}
+        </List>
+      </div>
     </div>
   );
 };

@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/i-toge-nta/react-sample#readme",
   "dependencies": {
+    "@material-ui/core": "^4.4.2",
     "@types/react-redux": "^7.1.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
